@@ -1,4 +1,4 @@
-Báo cáo nạp dữ liệu và backup/restore by DHA
+Báo cáo nạp dữ liệu và backup/restore by Tran Thu Uyen
 
 # Nhiệm vụ 3: Nạp dữ liệu từ CSV
 File CSV: NhanVien.csv
@@ -23,3 +23,4 @@ CREATE DATABASE QuanLyNhanSu_Moi;
 
 Phục hồi dữ liệu từ file backup:
 mysql -u <username> -p QuanLyNhanSu_Moi < QuanLyNhanSu_backup.sql
+

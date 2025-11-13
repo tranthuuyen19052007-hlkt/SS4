@@ -1,0 +1,25 @@
+Báo cáo nạp dữ liệu và backup/restore by DHA
+
+# Nhiệm vụ 3: Nạp dữ liệu từ CSV
+File CSV: NhanVien.csv
+Nội dung CSV:
+"Trần Văn An","an.tv@email.com","2023-10-25",3
+"Lê Thị Bích","bich.lt@email.com","2023-11-15",2
+
+# Câu lệnh sử dụng mysqlimport:
+mysqlimport --local --fields-terminated-by=',' --ignore-lines=1 --columns='ho_ten,email,ngay_vao_lam,phong_ban_id' -u <username> -p QuanLyNhanSu NhanVien.csv
+
+---
+
+# Nhiệm vụ 5: Sao lưu và phục hồi
+
+-1) Sao lưu cơ sở dữ liệu
+Câu lệnh sao lưu:
+mysqldump -u <username> -p QuanLyNhanSu > QuanLyNhanSu_backup.sql
+
+-2) Phục hồi vào cơ sở dữ liệu mới
+Tạo CSDL mới:
+CREATE DATABASE QuanLyNhanSu_Moi;
+
+Phục hồi dữ liệu từ file backup:
+mysql -u <username> -p QuanLyNhanSu_Moi < QuanLyNhanSu_backup.sql
